@@ -1,6 +1,30 @@
 = chef_handler_splunk
 
-Description goes here.
+A report handler for Chef that creates data that is easily consumable by Splunk.
+
+This handler will create 3 files in /var/chef/splunk:
+
+  node.data - Information about the nodes attributes, flattened identically to what we do for search
+  run.data - Information about the specific run
+  resource.data - Information about every resource created during the run
+
+You can then create a simple Splunk app to run all sorts of fun reports.
+
+== Using the Splunk Report Handler
+
+In your /etc/chef/client.rb, add the following:
+
+  require 'rubygems'
+  require 'chef_handler_splunk'
+
+  splunk_handler = Chef::Handler::Splunk.new
+  report_handlers << splunk_handler
+  exception_handlers << splunk_handler
+
+The handler takes two options:
+
+  :path - A path to drop the report files in - defaults to /var/chef/splunk
+  :keep - The number of backup files to keep (in the normal chef backup location), defaults to 10
 
 == Contributing to chef_handler_splunk
  
@@ -14,6 +38,7 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Adam Jacob. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Opscode, Inc.
+
+Released under the Apache 2.0 license - See LICENSE for further details.
 

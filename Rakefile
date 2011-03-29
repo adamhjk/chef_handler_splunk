@@ -14,9 +14,9 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "chef_handler_splunk"
   gem.homepage = "http://github.com/adamhjk/chef_handler_splunk"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.license = "Apache 2.0"
+  gem.summary = %Q{Stores data about Chef runs for Splunk}
+  gem.description = %Q{Stores data about Chef runs for Splunk}
   gem.email = "adam@opscode.com"
   gem.authors = ["Adam Jacob"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

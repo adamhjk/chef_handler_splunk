@@ -1,0 +1,1 @@
+require 'chef/handler/splunk'
